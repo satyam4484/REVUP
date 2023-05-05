@@ -1,0 +1,87 @@
+
+/* spinner */
+.spinner {
+    display: inline-block;
+    
+    width: 80px;
+    height: 80px;
+}
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.spinner:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom:40%;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    z-index: 1;
+    border-radius: 50%;
+    border: 6px solid rgb(9, 172, 242);
+    border-color: rgb(9, 172, 242) transparent rgb(9, 172, 242) transparent;
+    animation: spinner 1.2s linear infinite;
+}
+
+.nav-profile{
+  width: 1.5rem;
+  height: 1rem;
+  margin: 0;
+
+}
+
+
+.my-desc > * {
+  margin: 0;
+}
+
+.mydiv{
+  height: 300px;
+  overflow: auto;
+}
+
+.ck-editor__editable {
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.company_box{
+  height: 600px;
+  overflow: auto;
+}
+
+
+.re{
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(5px,-10px);
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.search{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  left: 0px;
+  top: 65px;
+  padding: 10px;
+  background-color: gray;
+  text-align: center;
+}
+
+.fm {
+  width: 600px;
+
+}
