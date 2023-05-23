@@ -7,7 +7,7 @@ import { useGlobalContext } from "../../context";
 import JobForm from "./JobForm";
 
 const JobDetails = () => {
-  const [job, setJob] = useState({});
+  const [job, setJob] = useState({}); 
   const location = useLocation();
   const { isLoggedIn, profile, user } = useGlobalContext();
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const JobDetails = () => {
     });
   }, []);
 
-  const applyJobHandler = () => {
+  const applyJobHandler = () => { 
     if (isLoggedIn === false) {
       navigate("/auth/login");
     } else {

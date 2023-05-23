@@ -39,8 +39,9 @@ const JobModal = ({ show, onHide,addNewJobs}) => {
       jobType:data.jobType,
       description:data.description,
       skillSet:skills,
-      usersApplied:[]
+      usersApplied:[] 
     }).then(response => {
+      console.log(response);
       setData(initialJobForm);
       addNewJobs(response.data);
     });
