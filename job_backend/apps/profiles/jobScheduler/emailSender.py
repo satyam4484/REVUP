@@ -284,8 +284,6 @@ def sendMail(name,org,website,site,position,email):
     msg = EmailMessage()
     msg['Subject'] = 'Application Received'
     msg['From'] = env('EMAIL_USERNAME')
-    # msg['To'] = 'oliparmanmanu@gmail.com'
-    # msg['To'] = 'meenalraut14@gmail.com'
     msg['To'] = 'satyamdsingh123456@gmail.com'
     # msg['To'] = email
     message = MIMEText(Environment().from_string(TEMPLATE).render(
@@ -347,8 +345,6 @@ def sentOtpMail(otp,email):
     msg['From'] = env('EMAIL_USERNAME')
     # msg['To'] = email
     msg['To'] = 'satyamdsingh123456@gmail.com'
-    # msg['To'] = 'meenalraut14@gmail.com'
-    # msg['To'] = 'oliparmanmanu@gmail.com'
     message = MIMEText(Environment().from_string(otpMessage).render(
         otp=otp
     ),"html")

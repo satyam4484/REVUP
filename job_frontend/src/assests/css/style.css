@@ -53,7 +53,7 @@
 }
 
 .company_box{
-  height: 600px;
+  height: 100vh;
   overflow: auto;
 }
 
