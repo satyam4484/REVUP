@@ -39,7 +39,7 @@ const MyNavbar = () => {
     >
       <Container fluid>
         <NavLink to="/" className="navbar-brand sm-auto mx-md-5 mx-auto p-0">
-          REVUP
+          ELEVATE
         </NavLink>
 
         <Navbar.Toggle
