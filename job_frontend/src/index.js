@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Routes } from "react-router-dom";
 import { AppProvider } from "./context";
 import App from "./App";
-import "./assests/css/bootstrap.css";
+// import "./assests/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./assests/css/style.css";
-import "./assests/js/main.js";
 
 const root = createRoot(document.getElementById("root"));
 

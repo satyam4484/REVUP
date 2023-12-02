@@ -4,15 +4,14 @@ import { Modal, Row, Col, Form, Button } from "react-bootstrap";
 import { gender, profilepic } from "../../data";
 import { updateUserProfile,getContact,updateContact} from "../../network/agent";
 
-const ContactModal = ({ show, onHide,updateProfileHandler }) => {
-  const [contact,setContact] = useState({});
+const ContactModal = ({ show, onHide ,contactData}) => {
+  const [contact,setContact] = useState(contactData);
 
-
+  
   useEffect(() => {
-    getContact().then(response => setContact(response.data))
-  },[])
+    // getContact().then(response => setContact(response.data));
+  },[contactData])
   const [error, setError] = useState(false);
-
   const onChangeHandler = (e) => {
 
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -27,6 +26,7 @@ const ContactModal = ({ show, onHide,updateProfileHandler }) => {
     }
 
     updateContact(contact).then(response => {
+      console.log(response);
         onHide();
     });
 

@@ -17,7 +17,6 @@ const Company = () => {
     updateProfile(data);
   };
 
-  console.log(profile);
   return (
     <>
       <Container>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useGlobalContext } from "../../context";
 import { PencilSquare,X } from "react-bootstrap-icons";
-import { getUserSkills,removeUserSkills } from "../../network/agent";
+import { getUserSkills,getContact,removeUserSkills } from "../../network/agent";
 import MainProfileModal from "./MainProfileModal";
 import ImageModal from "./ImageModal";
 import ViewResume from "./ViewResume";
@@ -13,6 +13,7 @@ import UserJobs from "./UserJobs";
 
 const Profile = () => {
   const { profile, updateProfile } = useGlobalContext();
+  const [contact,setContact] = useState({});
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const [contactModal, setContactModal] = useState(false);
@@ -21,6 +22,7 @@ const Profile = () => {
   const [skills, setSkills] = useState([]);
   const [skillmodal, setskillModal] = useState(false);
   useEffect(() => {
+    getContact().then(response => setContact(response.data));
     if (
       Object.keys(profile).length > 0 &&
       (!profile.firstName || !profile.lastName)
@@ -60,8 +62,9 @@ const Profile = () => {
                 <Col xs={10} sm={4} md={3} className="py-3">
                   <img
                     src={profile.profilePic}
-                    className="img-fluid rounded"
+                    className="img-fluid rounded w-50"
                     style={{ cursor: "pointer" }}
+
                     onClick={() => setImageModal(true)}
                   />
                 </Col>
@@ -148,6 +151,7 @@ const Profile = () => {
         <ContactModal
           show={contactModal}
           onHide={() => setContactModal(false)}
+          contactData={contact}
         />
       )}
 

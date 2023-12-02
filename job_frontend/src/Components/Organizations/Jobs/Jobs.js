@@ -12,6 +12,7 @@ const Jobs = () => {
   const { user } = useGlobalContext();
   const location = useLocation();
 
+  console.log(jobs);
   useEffect(() => {
     getCompanyJob().then((response) => setJobs(response.data));
   }, []);

@@ -281,6 +281,7 @@ environ.Env.read_env()
 
     
 def sendMail(name,org,website,site,position,email):
+    print(env)
     msg = EmailMessage()
     msg['Subject'] = 'Application Received'
     msg['From'] = env('EMAIL_USERNAME')
@@ -300,7 +301,7 @@ def sendMail(name,org,website,site,position,email):
         smtp.login(env('EMAIL_USERNAME'), env('EMAIL_PASSWORD')) 
         smtp.send_message(msg) 
 
-
+# sendMail("","","","","","","")
 
 # otp content 
 otpMessage= '''

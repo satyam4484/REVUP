@@ -12,7 +12,7 @@ const MainProfileModal = ({ show, onHide, profile,updateProfileHandler }) => {
     gender: profile.gender,
   });
 
-  console.log(profile)
+  console.log(profile);
 
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -28,7 +28,7 @@ const MainProfileModal = ({ show, onHide, profile,updateProfileHandler }) => {
   }, [profile]);
 
   const onChangeHandler = (e) => {
-    console.log([e.target.name], e.target.value )
+    console.log(e.target.name,e.target.value);
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
@@ -109,7 +109,7 @@ const MainProfileModal = ({ show, onHide, profile,updateProfileHandler }) => {
                   aria-label="Default select example"
                   name="gender"
                   onChange={onChangeHandler}
-                  value={data.gender}
+                  value={data.gender || "Male"}
                 >
                   {gender.map((item) => (
                     <option key={item} value={item}>
@@ -140,30 +140,6 @@ const MainProfileModal = ({ show, onHide, profile,updateProfileHandler }) => {
                 )}
               </Form.Group>
             </Col>
-            {/* <Col md={10}>
-              <Row className="justify-content-evenly">
-                <Col md={6}>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Profile Pic</Form.Label>
-                    <Form.Control type="file" name="profilePic" accept="image/png, image/gif, image/jpeg"/>
-                  </Form.Group>
-                </Col>
-                <Col md={5}>
-                  <img src={profilepic} className="img-fluid" width={60} />
-                  <button className="btn btn-sm btn-warning mx-5">
-                    remove
-                  </button>
-                </Col>
-              </Row>
-            </Col> */}
-
-            {/* Resume */}
-            {/* <Col md={10}>
-              <Form.Group className="mb-3">
-                <Form.Label>Resume</Form.Label>
-                <Form.Control type="file" name="resume" accept="application/pdf" />
-              </Form.Group>
-            </Col> */}
           </Row>
         </Form>
       </Modal.Body>
