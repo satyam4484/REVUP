@@ -1,4 +1,3 @@
-# REVUP - A Job Application
 
 ## Running
 

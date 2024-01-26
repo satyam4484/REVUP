@@ -54,7 +54,7 @@ const MyNavbar = () => {
         >
           <Offcanvas.Header className="bg-primary text-light">
             <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
-              REVUP
+              ELEVATE
             </Offcanvas.Title>
             <Button
               className="btn-close btn-info text-reset"

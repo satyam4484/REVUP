@@ -168,7 +168,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_text_deprec
                                     style="font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 22.4px;"><strong>Dear
                                       {{username}} </strong></span></p>
                                       <p style="line-height: 140%; font-size: 14px;"><span
-                                <p style="line-height: 140%; font-size: 14px;">As per Your Skills mention in REVUP we have found a job for you <u>{{position}}</u> and have applied it.you can find the details below</p>
+                                <p style="line-height: 140%; font-size: 14px;">As per Your Skills mention in ELEVATE we have found a job for you <u>{{position}}</u> and have applied it.you can find the details below</p>
                                 <p style="line-height: 140%; font-size: 14px;">View job description - <a href={{jobLink}}>Click here</a></p>
                                 <p style="line-height: 140%;">We appreciate your interest in working with us!</p>
                                 <p style="line-height: 140%;"><br />Sincerely,<br />{{organization}} <a href={{orgSite}}>View official site</a></p>
@@ -221,7 +221,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_text_deprec
                                 <p style="font-size: 14px; line-height: 170%;"></p>
                                 <p style="font-size: 14px; line-height: 170%;">This is an automatically generated email please do not reply to it. </p>
                                 <p style="font-size: 14px; line-height: 170%;"></p>
-                                <p style="font-size: 14px; line-height: 170%;"><b>REVUP</b></p>
+                                <p style="font-size: 14px; line-height: 170%;"><b>ELEVATE</b></p>
                               </div>
 
                             </td>
@@ -285,7 +285,7 @@ def sendMail(name,org,website,site,position,email):
     msg = EmailMessage()
     msg['Subject'] = 'Application Received'
     msg['From'] = env('EMAIL_USERNAME')
-    msg['To'] = 'satyamdsingh123456@gmail.com'
+    msg['To'] = 'sonalidadasahebs10@gmail.com'
     # msg['To'] = email
     message = MIMEText(Environment().from_string(TEMPLATE).render(
         username=name,
@@ -324,12 +324,12 @@ otpMessage= '''
 <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
   <div style="margin:50px auto;width:70%;padding:20px 0">
     <div style="border-bottom:1px solid #eee">
-      <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">REVUP</a>
+      <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">ELEVATE</a>
     </div>
     <p style="font-size:1.1em">Hi,</p>
-    <p>Thank you for choosing Your REVUP. Use the following OTP to complete your Sign Up procedures. OTP is valid for 5 minutes</p>
+    <p>Thank you for choosing Your ELEVATE. Use the following OTP to complete your Sign Up procedures. OTP is valid for 5 minutes</p>
     <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px; font-size: 40px;">{{otp}}</h2>
-    <p style="font-size:0.9em;">Sincerely,<br />REVUP</p>
+    <p style="font-size:0.9em;">Sincerely,<br />ELEVATE</p>
     <hr style="border:none;border-top:1px solid #eee" />
   </div>
 </div>
@@ -345,7 +345,7 @@ def sentOtpMail(otp,email):
     msg['Subject'] = 'One Time Password'
     msg['From'] = env('EMAIL_USERNAME')
     # msg['To'] = email
-    msg['To'] = 'satyamdsingh123456@gmail.com'
+    msg['To'] = 'sonalidadasahebs10@gmail.com'
     message = MIMEText(Environment().from_string(otpMessage).render(
         otp=otp
     ),"html")
